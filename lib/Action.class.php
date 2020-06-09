@@ -125,7 +125,9 @@ class Action {
 			$id = $codeResponse[0]['idAtiva'];
 			$activeResponse = $this->Mod->insertData("UPDATE `usuario` SET `ativo` = '2' WHERE `usuario`.`usuarioId` = ".$id." ;");
 			$deleteResponse = $this->Mod->insertData("DELETE FROM `ativacao` WHERE `ativacao`.`idAtiva` = ".$id.";");
+			$_SESSION['ativo'] = 2;
 			echo 'true';
+			$this->Web->callBackLogged();
 			return true;
 		}else{
 			echo 'false';

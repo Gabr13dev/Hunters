@@ -5,16 +5,18 @@
 class OrganizacaoCtl extends Controller
 {
 	public $data = [];
-    private $model;
+	private $model;
+	private $parent;
 
 	function __construct()
 	{
 		$this->model = new OrganizacaoModel();
+		$this->parent = new parent();
 	}
 
 	public function main(){
-		//$data['curriculos'] = $this->model->getCurriculos();
 		$data['var_teste'] = 'teste';
+		$this->parent->getFirstLetter('');
 		return $data;
 	}
 

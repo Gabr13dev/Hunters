@@ -40,9 +40,11 @@ class Website
     private function render($site){
         $this->loggedIn();
         $Controll = new Controller();
-        $nameSite = $this->getRotas()[1].'Ctl';
-        $objSite = new $nameSite;
-        $dataSite = extract($objSite->main());
+        if($site != "404.php"){
+            $nameSite = $this->getRotas()[1].'Ctl';
+            $objSite = new $nameSite;
+            $dataSite = extract($objSite->main());
+        }
         include_once "inc/depedences.php";
         include_once "inc/padrao.php";
         echo '<title>'.Structure::getNamepage($site).'</title>';
@@ -64,6 +66,10 @@ class Website
                     echo '<script> window.location.replace("'.BASE_URL.'/confirmEmail"); </script>';
                 }
             }
+    }
+
+    public function callBackLogged(){
+        $this->loggedIn();
     }
 
     public function isHome(){
