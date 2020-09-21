@@ -102,8 +102,8 @@ class Action {
 			$mail->SMTPSecure = 'ssl';	// ssl (deprecated - descontinuada) usar tls
 			$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
 			$mail->Port = 465;  		// A porta do smtp do gmail é 465 para ssl e 587 para tsl
-			$mail->Username = 'esportshunters.contato@gmail.com';
-			$mail->Password = 'Galo@1998';
+			$mail->Username = '';
+			$mail->Password = '';
 			$mail->SetFrom($de, $de_nome);
 			$mail->Subject = $assunto;
 			$mail->CharSet  = 'utf-8';
